@@ -457,7 +457,7 @@ bool feasible_with_gurobi(Instance &instance, TempSolution &sol, Input &input,
     if (!solFeasible) {
         #pragma omp critical
         std::cout << "Thread = " << omp_get_thread_num()
-                  << " Solution infeasible with gurobi because rhs < 0 \n";
+                  << " Solution infeasible with gurobi because rhs < 0 when fixing nets \n";
         return false;
     }
 

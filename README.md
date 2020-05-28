@@ -2,7 +2,7 @@
 
 In this repo you will find the code to solve the problem described in **(Citation TBA)**. Before describing the code notice that:
 
-1. The data sets employed in **Citation TBA** can be download from <http://www.example.com> **PONER LINK**. From now on, every time I refer to a particular collection of data sets, I will mean these. **WARNING:** If you are going to download the data sets, be aware: the size of these, once decompressed, is about **Write Size** GB.
+1. The data sets employed in **Citation TBA** can be download from <http://www.example.com> **PONER LINK**. From now on, every time I refer to a particular collection of data sets, I will mean these. **WARNING:** If you are going to download the data sets, be aware: the size of these, once decompressed, is about **50**GB.
 
 2. The code solves the problem either by exact methods or using the matheuristic described in **Citation TBA**. In any case [Gurobi](https://www.gurobi.com/) is required, i.e.: you need to have this solver installed to compile and execute the code.
 
@@ -13,7 +13,7 @@ In this repo you will find the code to solve the problem described in **(Citatio
 
 **WARNING:** *OpenMP* is required!
 
-To compile the code in any Operating System (OS), *CMakeLists.txt* files are provided. Here, I will show you how to use them in Linux, but I recommend you to check the instructions regardless of your OS. Steps:
+To compile the code in any Operating System (OS), *CMakeLists.txt* files are provided. Here, I will show you how to use them in Linux. I recommend you to check the instructions regardless of your OS. Steps:
 
 1. First, we have to create two libraries that are used in the code. One is to work with graphs and the other to make easier (when coding) operations like creating time stamps, exporting outputs etc. To create them, go to directory *./lib/graph/build*, open a terminal and run the following commands:
 
