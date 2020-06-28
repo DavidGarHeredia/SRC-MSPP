@@ -218,7 +218,7 @@ void solve_whole_problem_with_gurobi (Instance &instance, Input &input,
     fill_variables (instance, variable);
 
     // Changing the previous 2 lines by the 2 below should solve the LP instead of the IP
-    // Note: The solution export when solving the LP will be wrong because
+    // Note: The solution exported when solving the LP will be wrong because
     // only variables such that x > 0.99 are exported (this works for the IP)
     // GRBVar* variable = model.addVars(input.numArcs, GRB_CONTINUOUS);
     // fill_variables_lp(instance, variable);
