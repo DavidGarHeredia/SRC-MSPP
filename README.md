@@ -30,7 +30,7 @@ make
 
 5. Finally, go to *./build* and run the same two commands specified in the 1st step. If everything worked, you are supposed to see a file called *executable* in the root directory. Execute it to solve the instances with the input provided (see inputs in the next section).
 
-**Note:** The code uses relatives paths to read data and export results. Paths are specified using slash (e.g.: dir1/dir2/...). This works for Linux, but probably it will not in Windows. In such a case, I'm afraid you will have to change "/" to "\\" in the code. Particularly, you will find those issues in files: *./src/main.cpp*  and *./src/Reading.cpp*.
+**Note:** The code uses relative paths to read data and export results. Paths are specified using slash (e.g.: dir1/dir2/...). This works for Linux, but probably it will not in Windows. In such a case, I'm afraid you will have to change "/" to "\\\\" in the code. Particularly, you will find those issues in files: *./src/main.cpp*  and *./src/Reading.cpp*.
 
 
 ## Input for the problem
