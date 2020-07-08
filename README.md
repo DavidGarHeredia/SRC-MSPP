@@ -2,7 +2,7 @@
 
 In this repo you will find the code to solve the problem described in **(Citation TBA)**. Before describing the code notice that:
 
-1. The data sets employed in **Citation TBA** can be download from [this link](https://mega.nz/file/HFdWRaSC#75TxZWam7IW1FkvNApv5JXu89kbdNjAX6uvUXYVSL50). From now on, every time I refer to a particular collection of data sets, I will mean these. **WARNING:** If you are going to download the data sets, be aware: the size of these, once decompressed, is about **50**GB.
+1. The data sets employed in **Citation TBA** can be download from [this link](https://mega.nz/file/HFdWRaSC#75TxZWam7IW1FkvNApv5JXu89kbdNjAX6uvUXYVSL50). From now on, every time I refer to a particular collection of data sets, I will mean these. **WARNING:** If you are going to download the data sets, be aware: the size of these, once decompressed, is about 50 GB.
 
 2. The code solves the problem either by exact methods or using the matheuristic described in **Citation TBA**. In any case [Gurobi](https://www.gurobi.com/) is required, i.e.: you need to have this solver installed to compile and execute the code.
 
@@ -29,6 +29,8 @@ make
 4. Now, before compiling the code to solve the SRC-MSPP, you need to slightly modify the *CMakeLists.txt*  file located at the root directory of the project, so your Gurobi version matches with the one specified there. For that, open the mentioned *CMakeLists.txt*. In lines 7 and 8 there are the two variables (*GUROBI* and *LGUROBI*) to be modified by the user. Modify them so they match with the location and version of your Gurobi library.
 
 5. Finally, go to *./build* and run the same two commands specified in the 1st step. If everything worked, you are supposed to see a file called *executable* in the root directory. Execute it to solve the instances with the input provided (see inputs in the next section).
+
+**Note:** The code uses relatives paths to read data and export results. Paths are specified using slash (e.g.: dir1/dir2/...). This works for Linux, but probably it will not in Windows. In such a case, I'm afraid you will have to change "/" to "\\" in the code. Particularly, you will find those issues in files: *./src/main.cpp*  and *./src/Reading.cpp*.
 
 
 ## Input for the problem
