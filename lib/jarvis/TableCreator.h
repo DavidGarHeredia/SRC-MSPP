@@ -43,6 +43,11 @@ namespace jarvis {
 
         void export_table(std::vector<Results> results);
 
+        bool table_exists() {
+            std::ifstream infile(_tableName);
+            return infile.good();
+        }
+
     };
 
 }

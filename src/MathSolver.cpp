@@ -1012,7 +1012,7 @@ int initialize_elements_constraint (size_t tam, std::string msg, double*& coeffs
         }
         return -1;
     }
-
+    return 0;
 }
 
 void error_in_hash_table (jarvis::Jarvis &jarvisObj, std::string msg) {

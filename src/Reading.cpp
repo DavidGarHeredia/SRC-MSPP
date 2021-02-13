@@ -9,148 +9,6 @@
 // READING FUNCTIONS
 //-----------------------------
 
-// This function reads from "pathInstances" the instances to solve
-void read_paths_instances_to_solve (Input &input, std::string pathInstances,
-                                    jarvis::Jarvis &jarvisObj) {
-
-    // print into screen what we are doing
-    print_info2(jarvisObj, "Reading Instances");
-
-    // open file to read
-    std::ifstream afile(pathInstances, std::ios::in);
-    std::string line;
-
-    // read info
-    if (afile.is_open()) {
-        input.graphPath.clear(); // make sure it is clear
-        while (!afile.eof()) {
-            // path to the folder with the graphs
-            std::getline(afile, line);
-            input.graphPath.push_back(line);
-        }
-        input.graphPath.pop_back(); // because it reads a blank line
-        afile.close();
-    } else {
-        std::cerr << "[ERROR]: Unable to open file to read the instances. \n";
-    }
-}
-
-
-// This function reads the input of the algorithm associated to each instance
-void read_input (size_t Inst_i, Input &input, jarvis::Jarvis &jarvisObj,
-                 Instance &instance) {
-
-    // print into screen what we are doing
-    print_frame_title(input.graphPath[Inst_i]);
-    print_info2(jarvisObj, "Reading Input");
-
-    // open file to read
-    std::string line;
-    std::ifstream afile(input.graphPath[Inst_i] + "/input.txt", std::ios::in);
-
-    // read info
-    if (afile.is_open()) {
-        // --------------- GENERAL INFORMATION --------------
-        std::getline(afile, line); // title line
-
-        // name of instance
-        std::getline(afile, line); // header
-        std::getline(afile, line); // name
-        instance.name = line;
-
-        // numArcs
-        std::getline(afile, line); // header
-        afile >> input.numArcs;
-        std::getline(afile, line); // remove line
-
-        // numThreadsGurOpti
-        std::getline(afile, line); // header
-        afile >> input.numThreadsGurOpti;
-        std::getline(afile, line); // remove line
-
-        // --------------- POOL OF SOLUTIONS --------------
-        std::getline(afile, line); // title line
-
-        // numSolInHeuristic
-        std::getline(afile, line); // header
-        afile >> input.numSolInHeuristic;
-        std::getline(afile, line); // remove line
-
-        // maxIterSearching
-        std::getline(afile, line); // header
-        afile >> input.maxIterSearching;
-        std::getline(afile, line); // remove line
-
-        // numThreads
-        std::getline(afile, line); // header
-        afile >> input.numThreads;
-        std::getline(afile, line); // remove line
-
-        // arcPenalization
-        std::getline(afile, line); // header
-        afile >> input.arcPenalization;
-        std::getline(afile, line); // remove line
-
-        // value for the coin flip
-        std::getline(afile, line); // header
-        afile >> input.probCoin;
-        std::getline(afile, line); // remove line
-
-        // use Gurobi in searching feasible solution
-        std::getline(afile, line); // header
-        afile >> input.useGurobi;
-        std::getline(afile, line); // remove line
-
-        // % of nets from which Gurobi is used searching feasible sol
-        std::getline(afile, line); // header
-        afile >> input.percToUseGurobi;
-        std::getline(afile, line); // remove line
-
-        // percentage of extra nets to use when employing Gurobi
-        std::getline(afile, line); // header
-        afile >> input.percExtraNets;
-        std::getline(afile, line); // remove line
-
-        // number of iters until using Gurobi again
-        std::getline(afile, line); // header
-        afile >> input.numIterAfterGurobi;
-        std::getline(afile, line); // remove line
-
-        // --------------- LOCAL SEARCH  --------------
-        std::getline(afile, line); // title line
-
-        // percentage of bad nets to use
-        std::getline(afile, line); // header
-        afile >> input.percBadNets;
-        std::getline(afile, line); // remove line
-
-        // percentage of related nets to really bad nets
-        std::getline(afile, line); // header
-        afile >> input.percRelatedNets;
-        std::getline(afile, line); // remove line
-
-        // --------------- rhsFolders --------------
-        std::getline(afile, line); // header
-        input.rhsFolders.clear(); // make sure it is clear
-
-        while (!afile.eof()) {
-            std::getline(afile, line);
-            input.rhsFolders.push_back(line);
-        }
-        input.rhsFolders.pop_back(); // because it reads and extra line
-
-        afile.close();
-
-    } else {
-        std::cerr << "[ERROR]: Unable to open file to read the input in instance: ";
-        std::cerr << input.graphPath[Inst_i] << "\n";
-    }
-
-    // print into screen the info just read to check that everthing is fine
-    dummy_check(instance, input);
-}
-
-
 // This function reads the 4d-graph for the current instance to solve
 int read_graph (Instance &instance, Input &input, size_t Inst_i,
                 jarvis::Jarvis &jarvisObj) {
@@ -168,7 +26,7 @@ int read_graph (Instance &instance, Input &input, size_t Inst_i,
     unsigned int numNet = 0, netRead;
 
     // open file with the 4d networks
-    std::ifstream afile(input.graphPath[Inst_i] + "/" + instance.name + ".csv", std::ios::in);
+    std::ifstream afile(input.graphPath[Inst_i], std::ios::in);
 
     // reading info
     if (afile.is_open()) {
@@ -231,7 +89,7 @@ void read_constraints (Instance &instance, Input &input, size_t Inst_i,
     print_info2(jarvisObj, "Reading Constraints");
 
     // variables required
-    std::string line = input.graphPath[Inst_i] + "/" + input.rhsFolders[rhs_j] + ".csv";
+    std::string line = input.rhsFolders[rhs_j];
     char coma;
     double rhs;
     Constraint constAux;
@@ -289,7 +147,7 @@ void read_constraints (Instance &instance, Input &input, size_t Inst_i,
 
     } else {
         std::cerr << "[ERROR]: Unable to read constraints: ";
-        std::cerr << input.graphPath[Inst_i] << "/" << input.rhsFolders[rhs_j] << "\n";
+        std::cerr << input.rhsFolders[rhs_j] << "\n";
     }
 }
 

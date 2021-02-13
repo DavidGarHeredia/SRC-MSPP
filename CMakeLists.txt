@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 3.10)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/../)
 
 # GUROBI VERSION
-set(GUROBI "/opt/gurobi900/linux64") # [WARNING]: TO BE EDITED BY THE USER!!!
+set(GUROBI "/opt/gurobi903/linux64") # [WARNING]: TO BE EDITED BY THE USER!!!
 set(LGUROBI "gurobi90") # [WARNING]: TO BE EDITED BY THE USER!!!
 
 # PROJECT NAME

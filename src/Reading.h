@@ -17,12 +17,6 @@
 // READING FUNCTIONS
 //-----------------------------
 
-void read_paths_instances_to_solve (Input &input, std::string pathInstances,
-                                    jarvis::Jarvis &jarvisObj);
-
-void read_input (size_t Inst_i, Input &input, jarvis::Jarvis &jarvisObj,
-                 Instance &instance);
-
 int read_graph (Instance &instance, Input &input, size_t Inst_i,
                 jarvis::Jarvis &jarvisObj);
 
