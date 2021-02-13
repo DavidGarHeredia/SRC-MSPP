@@ -21,6 +21,8 @@ function run_code(inputFiles, param, dictInstanceArcs)
 		files = split(inputFiles[idx], " ");
 		nArcs = dictInstanceArcs[files[1]];
 		name = split(files[1], "/")[4];
+		# NOTE: you might want to add some if statement to change the parameter
+		# numSolInHeuristic in function of the size of the problem
 		run(`./executable 
 				  $files 
 				  $name
