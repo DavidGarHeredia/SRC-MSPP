@@ -4,11 +4,11 @@ In this repo you will find the code to reproduce the experiments in [1]. Before 
 
 1. The data sets employed in [1] can be download from [this link](https://mega.nz/file/HFdWRaSC#75TxZWam7IW1FkvNApv5JXu89kbdNjAX6uvUXYVSL50). From now on, every time I refer to a particular collection of data sets, I will mean these. **WARNING:** If you are going to download the data sets, be aware: the size of these, once decompressed, is about 50 GB.
 
-2. The code solves the problem either by exact methods or using the matheuristic described in **Citation TBA**. In any case [Gurobi](https://www.gurobi.com/) is required, i.e.: you need to have this solver installed to compile and execute the code.
+2. The code solves the problem either by exact methods or using the matheuristic described in [1]. In any case [Gurobi](https://www.gurobi.com/) is required, i.e.: you need to have this solver installed to compile and execute the code.
 
 3. To compile the code, you will also need to have installed: a `C++` compiler, [Cmake](https://cmake.org/) and [OpenMP](https://www.openmp.org/).
 
-4. When explaining the code for the matheuristic or the data sets employed, I will assume that you are minimally familiar with the content exposed in **(Citation TBA)**. That is, you know what you want to solve, how the data sets look like and what parameters conform the algorithm.
+4. When explaining the code for the matheuristic or the data sets employed, I will assume that you are minimally familiar with the content exposed in [1]. That is, you know what you want to solve, how the data sets look like and what parameters conform the algorithm.
 
 
 ## Compiling the code
@@ -54,7 +54,7 @@ The input for the problem is read from directory *./data*. The structure of this
 
 **Note 2:** After you have downloaded the data sets, you will see some *txt* files inside the directories of the above structure (with the name of *instances.txt* and *input.txt*). Forget about them. They correspond to an old way of executing the experiments.
 
-Inside each directory of type *problem_of_size_Nx*, you will find directories of type *problem_y*. These contain instances to be solved. For example, in the data from the link provided, you will find inside each directory of type *problem_of_size_Nx*, 3 directories, each of them corresponding to a different flight plan (details in **(Citation TBA)**).
+Inside each directory of type *problem_of_size_Nx*, you will find directories of type *problem_y*. These contain instances to be solved. For example, in the data from the link provided, you will find inside each directory of type *problem_of_size_Nx*, 3 directories, each of them corresponding to a different flight plan (details in [1]).
 
 Inside each directory of type *problem_y*, you will find 2 items:
 
