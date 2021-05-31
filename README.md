@@ -1,8 +1,8 @@
-# A Solution Method for the Shared Resource Constrained Multi-Shortest Path Problem (SRC-MSPP)
+# A Solution Method for the Shared Resource-Constrained Multi-Shortest Path Problem (SRMSPP)
 
-In this repo you will find the code to reproduce the experiments in **(Citation TBA)**. Before describing the code notice that:
+In this repo you will find the code to reproduce the experiments in [1]. Before describing the code notice that:
 
-1. The data sets employed in **Citation TBA** can be download from [this link](https://mega.nz/file/HFdWRaSC#75TxZWam7IW1FkvNApv5JXu89kbdNjAX6uvUXYVSL50). From now on, every time I refer to a particular collection of data sets, I will mean these. **WARNING:** If you are going to download the data sets, be aware: the size of these, once decompressed, is about 50 GB.
+1. The data sets employed in [1] can be download from [this link](https://mega.nz/file/HFdWRaSC#75TxZWam7IW1FkvNApv5JXu89kbdNjAX6uvUXYVSL50). From now on, every time I refer to a particular collection of data sets, I will mean these. **WARNING:** If you are going to download the data sets, be aware: the size of these, once decompressed, is about 50 GB.
 
 2. The code solves the problem either by exact methods or using the matheuristic described in **Citation TBA**. In any case [Gurobi](https://www.gurobi.com/) is required, i.e.: you need to have this solver installed to compile and execute the code.
 
@@ -177,5 +177,4 @@ The previous represents one row (constraint) in file *rhs_z.csv*. Note that in t
 
 
 ## References
-
-**(Citation TBA)**
+[1] García-Heredia, D., Molina, E., Laguna, M. & Alonso-Ayuso, A. A Solution Method for the Shared Resource-Constrained Multi-Shortest Path Problem. Accepted (May 2020) in Expert Systems With Applications.
