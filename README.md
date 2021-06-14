@@ -177,4 +177,4 @@ The previous represents one row (constraint) in file *rhs_z.csv*. Note that in t
 
 
 ## References
-[1] García-Heredia, D., Molina, E., Laguna, M. & Alonso-Ayuso, A. A Solution Method for the Shared Resource-Constrained Multi-Shortest Path Problem. Accepted (May 2020) in Expert Systems With Applications.
+[1] García-Heredia, D., Molina, E., Laguna, M. & Alonso-Ayuso, A (2021). A Solution Method for the Shared Resource-Constrained Multi-Shortest Path Problem. Accepted in Expert Systems With Applications, 115193.
